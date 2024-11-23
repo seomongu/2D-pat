@@ -31,9 +31,9 @@ public class NPCDialgoue : MonoBehaviour
             Debug.Log($"{gameObject.name} 와 상호작용을 했습니다.");
             PlayerInteract player = collision.GetComponent<PlayerInteract>();
             player.hasExistNPC = true;
-            player.CloseText();
             player.currentNPC = npc;
-        }
+            player.GetDialogueByNPC(npc);
+        }                     
     }
 
     private void OnTriggerExit2D(Collider2D collision)
